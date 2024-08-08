@@ -14,13 +14,15 @@ def main():
     # Parse the arguments
     args = parser.parse_args()
 
-    # Print "hello world" if -l option is provided and exit
-    if args.list:
-        print_hello_world()
-        return
-
     # Define the file
     file = "test.txt"
+
+    # Print "hello world" if -l option is provided and exit
+    if args.list:
+        with open(file, 'r') as f:
+            line_count = sum(1 for line in f)
+        print(f"Number of lines in '{file}': {line_count}")
+        return
 
     # Check if the file exists
     if not os.path.exists(file):
@@ -31,7 +33,7 @@ def main():
     file_size = os.stat(file)
 
     # Print the file size
-    print({file_size.st_size})
+    print(f"File size of '{file}': {file_size.st_size} bytes")
 
     # Execute the specific part of the code if -c option is provided
     if args.code:
@@ -40,9 +42,6 @@ def main():
 
 def specific_function():
     print("Executing the specific function!")
-
-def print_hello_world():
-    print("Hello World")
 
 if __name__ == "__main__":
     main()
