@@ -6,10 +6,13 @@ def main():
     parser = argparse.ArgumentParser(description="A script with -c and -l options")
     
     # Add the -c argument
-    parser.add_argument('-c', '--code', action='store_true', help='Execute the specific part of the code')
+    parser.add_argument('-c', '--code', action='store_true', help='code')
     
     # Add the -l argument
-    parser.add_argument('-l', '--list', action='store_true', help='Print "hello world"')
+    parser.add_argument('-l', '--list', action='store_true', help='list')
+
+    # Add the -w argument
+    parser.add_argument('-w', '--word', action='store_true', help='Words')
 
     # Parse the arguments
     args = parser.parse_args()
@@ -39,6 +42,15 @@ def main():
     if args.code:
         print("The -c option was provided, executing the specific part of the code.")
         specific_function()
+
+    if args.word:
+        number_of_words = 0
+        with open(r'test.txt', 'r') as file:
+            data = file.read()
+            lines = data.split()
+            number_of_words += len(lines)
+        print(number_of_words)
+
 
 def specific_function():
     print("Executing the specific function!")
