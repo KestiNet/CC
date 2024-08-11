@@ -14,6 +14,9 @@ def main():
     # Add the -w argument
     parser.add_argument('-w', '--word', action='store_true', help='Words')
 
+    #Add the -m argument
+    parser.add_argument('-m', '--many', action='store_true', help='characters')
+
     # Parse the arguments
     args = parser.parse_args()
 
@@ -50,6 +53,13 @@ def main():
             lines = data.split()
             number_of_words += len(lines)
         print(number_of_words)
+
+    if args.many:
+        with open(file, 'r')as file:
+            content = file.read()
+        number_of_characters = len(content)
+        print(number_of_characters)
+        
 
 
 def specific_function():
