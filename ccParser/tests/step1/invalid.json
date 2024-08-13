@@ -1,0 +1,22 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "is_employee": true,
+    "contact_info": {
+        "email": "johndoe@example.com",
+        "phone": "123-456-7890"
+    },
+    "skills": ["Python", "Data Analysis", "Machine Learning"],
+    "projects": [
+        {
+            "name": "Project A",
+            "description": "A machine learning project",
+            "duration_months": 6
+        },
+        {
+            "name": "Project B",
+            "description": "A data analysis project",
+            "duration_months": 3
+        }
+    ]
+}
