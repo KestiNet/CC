@@ -14,4 +14,11 @@ for file_path in file_paths:
         print(f"File not found: {file_path}")
 
 for idx, data in enumerate(all_data):
-    print(f"Data from file {file_paths[idx]}: {data}")
+    if  json.loads(all_data):
+        print(f"true")
+    else:
+        print(f"False")
+    
+    
+    
+    #print(f"Data from file {file_paths[idx]}: {data}")
