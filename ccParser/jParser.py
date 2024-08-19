@@ -1,24 +1,20 @@
 import json
 import os
 
-file_paths = ['tests/step1/invalid.json', 'tests/step1/valid.json']
+file_path = 'Z:/devs/CC/ccParser/tests/step2/invalid.json'
+#rfile = open(file_path,'r')
 
-all_data = []
+with open(file_path, 'r') as file:
+    content = file.read()
+ 
+#all_data = json.load(rfile)
 
-for file_path in file_paths:
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-            all_data.append(data)
-    else:
-        print(f"File not found: {file_path}")
+is_valid_json = False
 
-for idx, data in enumerate(all_data):
-    if  json.loads(all_data):
-        print(f"true")
-    else:
-        print(f"False")
-    
-    
-    
-    #print(f"Data from file {file_paths[idx]}: {data}")
+try:
+   valid = json.loads(content)
+   is_valid_json = True
+   print("0")
+except json.JSONDecodeError:
+    is_valid_json = False
+    print("1")
