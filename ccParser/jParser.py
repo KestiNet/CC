@@ -1,7 +1,7 @@
 import json
 import os
 
-file_path = 'Z:/devs/CC/ccParser/tests/step2/invalid.json'
+file_path = 'Z:/devs/CC/ccParser/tests/step3/valid.json'
 #rfile = open(file_path,'r')
 
 with open(file_path, 'r') as file:
@@ -18,3 +18,7 @@ try:
 except json.JSONDecodeError:
     is_valid_json = False
     print("1")
+
+for key, value in valid.items():
+    print(key,value)
+
